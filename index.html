@@ -22,6 +22,15 @@
 <title>Himani Mistry — Data Analyst</title>
 <meta name="description" content="Himani Mistry — data analyst turning systems and large-scale data into decisions. MS Business Analytics, CSU East Bay.">
 
+<!-- Link-preview tags: control what shows when the URL is texted or shared -->
+<meta property="og:title" content="Himani Mistry">
+<meta property="og:description" content="Data Analyst · San Francisco Bay Area — turning systems and large-scale data into decisions.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://himani-mistry.github.io/portfolio/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Himani Mistry">
+<meta name="twitter:description" content="Data Analyst · San Francisco Bay Area">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -131,6 +140,9 @@
   .btn:hover{text-decoration:none;border-color:var(--accent);transform:translateY(-1px);}
   .btn-primary{background:var(--accent);color:#fff;border-color:var(--accent);}
   .btn-primary:hover{background:var(--accent-soft);border-color:var(--accent-soft);}
+  .btn-copy{cursor:pointer;font-family:var(--mono);font-size:.85rem;}
+  .copy-icon{width:15px;height:15px;opacity:.85;}
+  .btn-copy.copied{background:#3BA776;border-color:#3BA776;}
   .avail{
     font-family:var(--mono);font-size:.74rem;color:var(--ink-faint);
     margin-top:22px;display:flex;align-items:center;gap:8px;
@@ -289,7 +301,10 @@
     <h1>Himani Mistry</h1>
     <p class="thesis">I turn <strong>systems and large-scale data</strong> into decisions — building the pipelines that store data, the models that predict from it, and the tools that generate with it.</p>
     <div class="hero-actions">
-      <a class="btn btn-primary" href="mailto:himanimistry0@gmail.com">Email me</a>
+      <button class="btn btn-primary btn-copy" data-copy="himanimistry0@gmail.com" aria-label="Copy email address">
+        <span class="copy-text">himanimistry0@gmail.com</span>
+        <svg class="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+      </button>
       <a class="btn" href="https://linkedin.com/in/himani-mistry/" target="_blank" rel="noopener">LinkedIn</a>
       <a class="btn" href="#projects">View projects</a>
     </div>
@@ -599,7 +614,10 @@
     <h2>Let's talk.</h2>
     <p>I'm building toward U.S. analyst roles and always happy to chat about a problem your team is working on.</p>
     <div class="hero-actions">
-      <a class="btn btn-primary" href="mailto:himanimistry0@gmail.com">himanimistry0@gmail.com</a>
+      <button class="btn btn-primary btn-copy" data-copy="himanimistry0@gmail.com" aria-label="Copy email address">
+        <span class="copy-text">himanimistry0@gmail.com</span>
+        <svg class="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+      </button>
       <a class="btn" href="https://linkedin.com/in/himani-mistry/" target="_blank" rel="noopener">LinkedIn</a>
     </div>
   </div>
@@ -613,6 +631,29 @@
 </div>
 
 <script>
+  // ----- copy email to clipboard -----
+  document.querySelectorAll('.btn-copy').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var email = btn.getAttribute('data-copy');
+      var label = btn.querySelector('.copy-text');
+      var original = label.textContent;
+      function done(){
+        label.textContent = 'Copied!';
+        btn.classList.add('copied');
+        setTimeout(function(){ label.textContent = original; btn.classList.remove('copied'); }, 1600);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(email).then(done).catch(fallback);
+      } else { fallback(); }
+      function fallback(){
+        var t = document.createElement('textarea');
+        t.value = email; document.body.appendChild(t); t.select();
+        try { document.execCommand('copy'); done(); } catch(e){ label.textContent = email; }
+        document.body.removeChild(t);
+      }
+    });
+  });
+
   // ----- expandable project cards -----
   document.querySelectorAll('.proj-head').forEach(function(btn){
     btn.addEventListener('click', function(){
