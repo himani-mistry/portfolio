@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<!--
+  ============================================================================
+  HIMANI MISTRY — DATA ANALYST PORTFOLIO
+  ----------------------------------------------------------------------------
+  HOW TO USE THIS FILE
+  - This is a single self-contained page. Just edit the text and push to GitHub.
+  - To go live: put this file in a repo named  yourusername.github.io  (or any
+    repo with GitHub Pages turned on in Settings > Pages). It serves at a URL
+    you can drop into outreach.
+  - The four PROJECT CARDS are placeholders. Each has clearly-labeled slots:
+        <!-- FILL: ... -->  tells you what to type and where.
+  - When a project is finished, fill its slots and delete its "In progress" tag.
+  - To embed a Tableau dashboard: publish to Tableau Public, hit Share > Embed,
+    and paste the code into the marked  TABLEAU EMBED SLOT  for that project.
+  ============================================================================
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Himani Mistry — Data Analyst</title>
+<meta name="description" content="Himani Mistry — data analyst turning systems and large-scale data into decisions. MS Business Analytics, CSU East Bay.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  /* ---------- TOKENS ---------- */
+  :root{
+    --paper:#FAF9F6;
+    --card:#FFFFFF;
+    --ink:#1B1B1E;
+    --ink-soft:#5C5C61;
+    --ink-faint:#8A8A8F;
+    --line:#E6E3DC;
+    --line-soft:#EFEDE7;
+    --accent:#33457E;          /* deliberate indigo — the one accent */
+    --accent-soft:#5468A6;
+    --accent-wash:#EEF0F8;
+    --radius:14px;
+    --maxw:980px;
+    --display:'Space Grotesk',system-ui,sans-serif;
+    --body:'Inter',system-ui,sans-serif;
+    --mono:'JetBrains Mono',ui-monospace,monospace;
+  }
+
+  /* ---------- BASE ---------- */
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--body);
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--accent);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+
+  /* shared eyebrow / labels */
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:.72rem;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--accent);
+  }
+  .section-label{
+    font-family:var(--mono);
+    font-size:.72rem;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--ink-faint);
+    margin:0 0 6px;
+  }
+  h2.section-title{
+    font-family:var(--display);
+    font-weight:600;
+    font-size:1.7rem;
+    letter-spacing:-.01em;
+    margin:0 0 28px;
+  }
+
+  /* ---------- NAV ---------- */
+  .nav{
+    position:sticky;top:0;z-index:50;
+    background:color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line-soft);
+  }
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:58px;}
+  .nav-name{font-family:var(--display);font-weight:600;font-size:.95rem;letter-spacing:.01em;}
+  .nav-links{display:flex;gap:22px;}
+  .nav-links a{
+    font-size:.82rem;color:var(--ink-soft);font-weight:500;
+  }
+  .nav-links a.active{color:var(--ink);}
+  .nav-links a:hover{text-decoration:none;color:var(--ink);}
+  @media(max-width:680px){ .nav-links{display:none;} }
+
+  /* ---------- HERO ---------- */
+  .hero{padding:84px 0 64px;border-bottom:1px solid var(--line-soft);}
+  .hero .eyebrow{display:block;margin-bottom:18px;}
+  .hero h1{
+    font-family:var(--display);
+    font-weight:700;
+    font-size:clamp(2.6rem,7vw,4.4rem);
+    line-height:1.02;
+    letter-spacing:-.03em;
+    margin:0 0 22px;
+  }
+  .hero .thesis{
+    font-size:clamp(1.05rem,2.4vw,1.3rem);
+    color:var(--ink-soft);
+    max-width:640px;
+    margin:0 0 30px;
+  }
+  .hero .thesis strong{color:var(--ink);font-weight:600;}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:var(--body);font-weight:500;font-size:.9rem;
+    padding:10px 18px;border-radius:999px;border:1px solid var(--line);
+    background:var(--card);color:var(--ink);transition:border-color .15s,transform .15s;
+  }
+  .btn:hover{text-decoration:none;border-color:var(--accent);transform:translateY(-1px);}
+  .btn-primary{background:var(--accent);color:#fff;border-color:var(--accent);}
+  .btn-primary:hover{background:var(--accent-soft);border-color:var(--accent-soft);}
+  .avail{
+    font-family:var(--mono);font-size:.74rem;color:var(--ink-faint);
+    margin-top:22px;display:flex;align-items:center;gap:8px;
+  }
+  .dot{width:7px;height:7px;border-radius:50%;background:#3BA776;display:inline-block;}
+
+  /* ---------- SECTIONS ---------- */
+  section{padding:64px 0;border-bottom:1px solid var(--line-soft);}
+
+  /* About */
+  .about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:40px;}
+  .about-lede{font-size:1.12rem;color:var(--ink);line-height:1.7;}
+  .about-facts{list-style:none;margin:0;padding:0;}
+  .about-facts li{
+    padding:11px 0;border-top:1px solid var(--line-soft);
+    font-size:.92rem;color:var(--ink-soft);
+  }
+  .about-facts li:first-child{border-top:none;}
+  .about-facts b{color:var(--ink);font-weight:600;display:block;font-size:.78rem;
+    font-family:var(--mono);letter-spacing:.04em;text-transform:uppercase;margin-bottom:2px;}
+  @media(max-width:680px){ .about-grid{grid-template-columns:1fr;gap:28px;} }
+
+  /* Experience */
+  .xp{display:grid;grid-template-columns:auto 1fr;gap:26px;}
+  .xp + .xp{margin-top:14px;padding-top:30px;border-top:1px solid var(--line-soft);}
+  .xp-when{font-family:var(--mono);font-size:.78rem;color:var(--ink-faint);white-space:nowrap;padding-top:4px;}
+  .xp-role{font-family:var(--display);font-weight:600;font-size:1.15rem;margin:0 0 2px;}
+  .xp-org{color:var(--accent);font-weight:500;font-size:.92rem;margin:0 0 12px;}
+  .xp-points{margin:0;padding-left:18px;color:var(--ink-soft);font-size:.93rem;}
+  .xp-points li{margin:6px 0;}
+  .xp-note{font-size:.82rem;color:var(--ink-faint);margin-top:8px;font-style:italic;}
+  @media(max-width:680px){
+    .xp{grid-template-columns:1fr;gap:6px;}
+    .xp-when{order:-1;}
+  }
+
+  /* Education */
+  .edu{display:flex;justify-content:space-between;gap:24px;align-items:baseline;flex-wrap:wrap;}
+  .edu + .edu{margin-top:18px;padding-top:18px;border-top:1px solid var(--line-soft);}
+  .edu-school{font-family:var(--display);font-weight:600;font-size:1.08rem;}
+  .edu-degree{color:var(--ink-soft);font-size:.92rem;margin-top:2px;}
+  .edu-meta{font-family:var(--mono);font-size:.78rem;color:var(--ink-faint);text-align:right;}
+
+  /* ---------- PROJECTS (the signature: analytics maturity ladder) ---------- */
+  .proj-intro{max-width:620px;color:var(--ink-soft);margin:0 0 32px;}
+  .ladder{display:flex;flex-direction:column;gap:14px;}
+  .proj{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    overflow:hidden;transition:border-color .2s,box-shadow .2s;
+  }
+  .proj:hover{border-color:#D5D1C6;}
+  .proj.open{border-color:var(--accent);box-shadow:0 6px 24px -14px rgba(51,69,126,.4);}
+  .proj-head{
+    width:100%;background:none;border:none;cursor:pointer;text-align:left;
+    display:grid;grid-template-columns:auto auto 1fr auto;align-items:center;gap:18px;
+    padding:22px 24px;font-family:var(--body);color:inherit;
+  }
+  .proj-rung{font-family:var(--mono);font-size:.8rem;color:var(--accent);font-weight:500;}
+  .proj-icon{
+    width:42px;height:42px;border-radius:10px;background:var(--accent-wash);
+    display:flex;align-items:center;justify-content:center;color:var(--accent);
+  }
+  .proj-icon svg{width:20px;height:20px;}
+  .proj-meta{min-width:0;}
+  .proj-cat{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);}
+  .proj-title{font-family:var(--display);font-weight:600;font-size:1.12rem;margin:2px 0 0;}
+  .proj-tags{font-family:var(--mono);font-size:.78rem;color:var(--ink-soft);margin-top:4px;}
+  .proj-right{display:flex;align-items:center;gap:12px;}
+  .tag-status{
+    font-family:var(--mono);font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--ink-faint);border:1px solid var(--line);border-radius:999px;padding:3px 9px;white-space:nowrap;
+  }
+  .chev{width:18px;height:18px;color:var(--ink-faint);transition:transform .3s;flex-shrink:0;}
+  .proj.open .chev{transform:rotate(180deg);color:var(--accent);}
+  @media(max-width:680px){
+    .proj-head{grid-template-columns:auto 1fr auto;gap:14px;padding:18px;}
+    .proj-icon{display:none;}
+    .tag-status{display:none;}
+  }
+
+  /* expandable body via grid-rows trick */
+  .proj-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s ease;}
+  .proj-body > .inner{overflow:hidden;visibility:hidden;transition:visibility .35s;}
+  .proj.open .proj-body{grid-template-rows:1fr;}
+  .proj.open .proj-body > .inner{visibility:visible;}
+  .proj-detail{padding:4px 24px 26px;border-top:1px solid var(--line-soft);}
+  .proj-hook{font-size:1.02rem;color:var(--ink);margin:20px 0 18px;font-weight:500;}
+  .hero-slot{
+    border:1px dashed var(--line);border-radius:10px;background:var(--line-soft);
+    aspect-ratio:16/7;display:flex;align-items:center;justify-content:center;
+    color:var(--ink-faint);font-family:var(--mono);font-size:.8rem;margin-bottom:22px;text-align:center;padding:16px;
+  }
+  .scaffold{display:grid;grid-template-columns:120px 1fr;gap:0;}
+  .scaffold dt{
+    font-family:var(--mono);font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--accent);padding:14px 0;border-top:1px solid var(--line-soft);
+  }
+  .scaffold dd{margin:0;padding:14px 0;border-top:1px solid var(--line-soft);color:var(--ink-soft);font-size:.93rem;}
+  .scaffold dt:first-of-type,.scaffold dd:first-of-type{border-top:none;}
+  .fill{color:var(--ink-faint);font-style:italic;}
+  .proj-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px;}
+  .proj-links .btn{font-size:.84rem;padding:8px 14px;}
+  @media(max-width:680px){
+    .proj-detail{padding:4px 18px 22px;}
+    .scaffold{grid-template-columns:1fr;}
+    .scaffold dt{padding-bottom:0;border-top:1px solid var(--line-soft);}
+    .scaffold dd{padding-top:4px;border-top:none;}
+  }
+
+  /* ---------- SKILLS ---------- */
+  .skills-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px 40px;}
+  .skill-row{border-top:1px solid var(--line-soft);padding-top:14px;}
+  .skill-cat{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:8px;}
+  .chips{display:flex;flex-wrap:wrap;gap:7px;}
+  .chip{
+    font-family:var(--mono);font-size:.8rem;color:var(--ink);
+    background:var(--card);border:1px solid var(--line);border-radius:7px;padding:5px 11px;
+  }
+  @media(max-width:680px){ .skills-grid{grid-template-columns:1fr;} }
+
+  /* ---------- CONTACT / FOOTER ---------- */
+  .contact{border-bottom:none;text-align:left;}
+  .contact h2{font-family:var(--display);font-weight:600;font-size:clamp(1.8rem,5vw,2.6rem);letter-spacing:-.02em;margin:0 0 10px;}
+  .contact p{color:var(--ink-soft);max-width:480px;margin:0 0 26px;}
+  .foot{padding:30px 0;color:var(--ink-faint);font-family:var(--mono);font-size:.74rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+
+  /* ---------- A11Y / MOTION ---------- */
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px;}
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    *{transition:none !important;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="nav">
+  <div class="wrap">
+    <span class="nav-name">Himani Mistry</span>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
+  <div class="wrap">
+    <span class="eyebrow">Data Analyst · San Francisco Bay Area</span>
+    <h1>Himani Mistry</h1>
+    <p class="thesis">I turn <strong>systems and large-scale data</strong> into decisions — building the pipelines that store data, the models that predict from it, and the tools that generate with it.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="mailto:himanimistry0@gmail.com">Email me</a>
+      <a class="btn" href="https://linkedin.com/in/himani-mistry/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="#projects">View projects</a>
+    </div>
+    <!-- OPTIONAL availability line — surfaces your Canadian / TN-eligible angle.
+         Delete this block if you'd rather keep it for conversations only. -->
+    <div class="avail"><span class="dot"></span> Open to U.S. analyst roles · Canadian citizen, TN-eligible</div>
+  </div>
+</header>
+
+<!-- ============ ABOUT ============ -->
+<section id="about">
+  <div class="wrap">
+    <p class="section-label">01 — About</p>
+    <div class="about-grid">
+      <p class="about-lede">Data analyst proficient in modern tools to extract insights, build dashboards, and develop analytical models that support data-driven decisions. I've worked across large-scale historical datasets — from workforce and HR data to four decades of climate records — translating messy real-world questions into structured reporting and clear answers.</p>
+      <ul class="about-facts">
+        <li><b>Now</b> MS Business Analytics candidate, CSU East Bay — graduating Dec 2026</li>
+        <li><b>Foundation</b> BA, University of Toronto — Urban Planning &amp; Public Policy, GIS</li>
+        <li><b>Domain depth</b> People Analytics &amp; HR, Canadian federal government</li>
+        <li><b>Based in</b> San Francisco Bay Area, California</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERIENCE ============ -->
+<section id="experience">
+  <div class="wrap">
+    <p class="section-label">02 — Experience</p>
+    <h2 class="section-title">Where I've done the work</h2>
+
+    <div class="xp">
+      <div class="xp-when">Jan 2024 – Aug 2025</div>
+      <div>
+        <h3 class="xp-role">HR Research Analyst</h3>
+        <p class="xp-org">Patrimoine Canadien — Canadian Heritage</p>
+        <ul class="xp-points">
+          <li>Designed and deployed a Power BI dashboard tracking office attendance for 1,000+ employees across department sectors — surfacing a 20% gap in policy compliance and giving leadership the data to refine hybrid in-office strategy.</li>
+          <li>Built an employee training-compliance dashboard automating tracking for 20+ mandatory modules, lifting completion rates 10% in the first quarter by visualizing departmental bottlenecks for senior management.</li>
+          <li>Analyzed 40 years of demographic and employment-equity data to pinpoint under-representation in key roles, directly informing the department's multi-decade diversity roadmap.</li>
+          <li>Partnered with HR stakeholders across teams to translate business questions into structured reporting solutions and dashboards.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="xp">
+      <div class="xp-when">Nov 2022 – Apr 2023</div>
+      <div>
+        <h3 class="xp-role">Archive Data Analyst</h3>
+        <p class="xp-org">Environment and Climate Change Canada</p>
+        <ul class="xp-points">
+          <li>Quality-assured 10,000+ digitally processed weather records (Linux CLI), ensuring integrity and readability standards before storage in the internal database.</li>
+          <li>Acted as liaison between external researchers and the archives, facilitating data provision for a climate-change research project.</li>
+        </ul>
+        <p class="xp-note">Acknowledged by name for data-accessibility contributions in Chan, W. S. (2023), <em>Breaking the silk dress cryptogram</em>, Cryptologia.</p>
+      </div>
+    </div>
+
+    <div class="xp">
+      <div class="xp-when">Sep 2018 – Apr 2019</div>
+      <div>
+        <h3 class="xp-role">Archive Data Intern</h3>
+        <p class="xp-org">Environment and Climate Change Canada</p>
+        <ul class="xp-points">
+          <li>Audited and catalogued a legacy archive of 1,000+ physical and digital climate records, improving retrieval efficiency for internal and external researchers.</li>
+          <li>Tested and validated database and data-server upgrades, using SQL for database inquiries to ensure integrity through the testing phase.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EDUCATION ============ -->
+<section id="education">
+  <div class="wrap">
+    <p class="section-label">03 — Education</p>
+    <h2 class="section-title">Training</h2>
+
+    <div class="edu">
+      <div>
+        <div class="edu-school">California State University, East Bay</div>
+        <div class="edu-degree">MS, Business Analytics</div>
+      </div>
+      <div class="edu-meta">Aug 2025 – Dec 2026<br>GPA 3.7</div>
+    </div>
+
+    <div class="edu">
+      <div>
+        <div class="edu-school">University of Toronto</div>
+        <div class="edu-degree">BA Co-op, Urban Planning &amp; Public Policy · GIS Technology</div>
+      </div>
+      <div class="edu-meta">Sep 2016 – Jun 2021</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<!--
+  Four cards, one per stage of the analytics maturity ladder.
+  Each card is a placeholder until you fill it. To finish a project:
+    1. Replace the FILL text in Problem / Data / Approach / Result / Next steps.
+    2. Add the hero visual (swap the .hero-slot div for an <img>).
+    3. Paste your Tableau embed into the TABLEAU SLOT (project 1) if relevant.
+    4. Point the buttons at the real GitHub repo / file / dashboard URLs.
+    5. Delete the <span class="tag-status">In progress</span> line.
+-->
+<section id="projects">
+  <div class="wrap">
+    <p class="section-label">04 — Projects</p>
+    <h2 class="section-title">Four projects across the analytics spectrum</h2>
+    <p class="proj-intro">From the systems that store data to the models that generate from it — each stage of the analytics maturity ladder, one project deep. Click any card to open it.</p>
+
+    <div class="ladder">
+
+      <!-- ===== PROJECT 1 — INFRASTRUCTURE (anchor) ===== -->
+      <article class="proj">
+        <button class="proj-head" aria-expanded="false" aria-controls="p1">
+          <span class="proj-rung">01</span>
+          <span class="proj-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg>
+          </span>
+          <span class="proj-meta">
+            <span class="proj-cat">Infrastructure</span>
+            <h3 class="proj-title">Sales warehouse + dashboard</h3>
+            <span class="proj-tags">MySQL → SQL views → Tableau</span>
+          </span>
+          <span class="proj-right">
+            <span class="tag-status">In progress</span>
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+          </span>
+        </button>
+        <div class="proj-body"><div class="inner" id="p1">
+          <div class="proj-detail">
+            <p class="proj-hook"><span class="fill">The hook: one line a skimmer reads in 5 seconds — e.g. "A manager can self-serve channel margin weekly."</span></p>
+            <!-- HERO VISUAL: swap this div for  <img src="img/p1.png" alt="..." style="width:100%;border-radius:10px;">  -->
+            <div class="hero-slot">hero visual — a screenshot of the dashboard or schema</div>
+            <!-- TABLEAU EMBED SLOT: paste your Tableau Public "Embed" code here when the dashboard is live. -->
+            <dl class="scaffold">
+              <dt>Problem</dt><dd class="fill">The business question, in plain language — what decision did this help someone make?</dd>
+              <dt>Data</dt><dd class="fill">Source, size, what it is, where it came from.</dd>
+              <dt>Approach</dt><dd class="fill">What you built — the schema, the SQL views, the dashboard. A key snippet or diagram.</dd>
+              <dt>Result</dt><dd class="fill">The quantified outcome or the insight it unlocked.</dd>
+              <dt>Next steps</dt><dd class="fill">Honest limitations + what you'd build next.</dd>
+            </dl>
+            <div class="proj-links">
+              <a class="btn" href="#" target="_blank" rel="noopener">GitHub repo</a>
+              <a class="btn" href="#" target="_blank" rel="noopener">.sql files</a>
+              <a class="btn" href="#" target="_blank" rel="noopener">Live dashboard</a>
+            </div>
+          </div>
+        </div></div>
+      </article>
+
+      <!-- ===== PROJECT 2 — PREDICTIVE ===== -->
+      <article class="proj">
+        <button class="proj-head" aria-expanded="false" aria-controls="p2">
+          <span class="proj-rung">02</span>
+          <span class="proj-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17l5-5 4 4 7-8"/><path d="M16 8h4v4"/></svg>
+          </span>
+          <span class="proj-meta">
+            <span class="proj-cat">Predictive</span>
+            <h3 class="proj-title">Retail revenue forecast</h3>
+            <span class="proj-tags">Time series · R</span>
+          </span>
+          <span class="proj-right">
+            <span class="tag-status">In progress</span>
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+          </span>
+        </button>
+        <div class="proj-body"><div class="inner" id="p2">
+          <div class="proj-detail">
+            <p class="proj-hook"><span class="fill">The hook: one line a skimmer reads in 5 seconds.</span></p>
+            <div class="hero-slot">hero visual — forecast chart with confidence band</div>
+            <dl class="scaffold">
+              <dt>Problem</dt><dd class="fill">The business question, in plain language.</dd>
+              <dt>Data</dt><dd class="fill">Source, size, what it is, where it came from.</dd>
+              <dt>Approach</dt><dd class="fill">The model, features, validation — key snippet or chart.</dd>
+              <dt>Result</dt><dd class="fill">Accuracy / the insight it unlocked.</dd>
+              <dt>Next steps</dt><dd class="fill">Honest limitations + what you'd do next.</dd>
+            </dl>
+            <div class="proj-links">
+              <a class="btn" href="#" target="_blank" rel="noopener">GitHub repo</a>
+              <a class="btn" href="#" target="_blank" rel="noopener">.R files</a>
+            </div>
+          </div>
+        </div></div>
+      </article>
+
+      <!-- ===== PROJECT 3 — PRESCRIPTIVE ===== -->
+      <article class="proj">
+        <button class="proj-head" aria-expanded="false" aria-controls="p3">
+          <span class="proj-rung">03</span>
+          <span class="proj-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg>
+          </span>
+          <span class="proj-meta">
+            <span class="proj-cat">Prescriptive</span>
+            <h3 class="proj-title">Workforce optimization</h3>
+            <span class="proj-tags">Gurobi · Python</span>
+          </span>
+          <span class="proj-right">
+            <span class="tag-status">In progress</span>
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+          </span>
+        </button>
+        <div class="proj-body"><div class="inner" id="p3">
+          <div class="proj-detail">
+            <p class="proj-hook"><span class="fill">The hook: one line a skimmer reads in 5 seconds.</span></p>
+            <div class="hero-slot">hero visual — the optimized allocation / before-vs-after</div>
+            <dl class="scaffold">
+              <dt>Problem</dt><dd class="fill">The decision being optimized, in plain language.</dd>
+              <dt>Data</dt><dd class="fill">Source, size, what it is, where it came from.</dd>
+              <dt>Approach</dt><dd class="fill">Objective, constraints, solver — key snippet or diagram.</dd>
+              <dt>Result</dt><dd class="fill">The optimized outcome vs. the baseline.</dd>
+              <dt>Next steps</dt><dd class="fill">Honest limitations + what you'd do next.</dd>
+            </dl>
+            <div class="proj-links">
+              <a class="btn" href="#" target="_blank" rel="noopener">GitHub repo</a>
+              <a class="btn" href="#" target="_blank" rel="noopener">.py files</a>
+            </div>
+          </div>
+        </div></div>
+      </article>
+
+      <!-- ===== PROJECT 4 — GENERATIVE ===== -->
+      <article class="proj">
+        <button class="proj-head" aria-expanded="false" aria-controls="p4">
+          <span class="proj-rung">04</span>
+          <span class="proj-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </span>
+          <span class="proj-meta">
+            <span class="proj-cat">Generative</span>
+            <h3 class="proj-title">Purchase-intent model</h3>
+            <span class="proj-tags">Text + GenAI · Python</span>
+          </span>
+          <span class="proj-right">
+            <span class="tag-status">In progress</span>
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+          </span>
+        </button>
+        <div class="proj-body"><div class="inner" id="p4">
+          <div class="proj-detail">
+            <p class="proj-hook"><span class="fill">The hook: one line a skimmer reads in 5 seconds.</span></p>
+            <div class="hero-slot">hero visual — a sample of model input → output</div>
+            <!-- LIVE DEMO TIP: this is the one to deploy on Hugging Face Spaces or Streamlit
+                 so the "Live demo" button opens something a manager can actually try. -->
+            <dl class="scaffold">
+              <dt>Problem</dt><dd class="fill">The text/GenAI problem, in plain language.</dd>
+              <dt>Data</dt><dd class="fill">Source, size, what it is, where it came from.</dd>
+              <dt>Approach</dt><dd class="fill">Pipeline, model, prompts/embeddings — key snippet.</dd>
+              <dt>Result</dt><dd class="fill">What it produces / how well it works.</dd>
+              <dt>Next steps</dt><dd class="fill">Honest limitations + what you'd do next.</dd>
+            </dl>
+            <div class="proj-links">
+              <a class="btn" href="#" target="_blank" rel="noopener">GitHub repo</a>
+              <a class="btn" href="#" target="_blank" rel="noopener">.py files</a>
+              <a class="btn" href="#" target="_blank" rel="noopener">Live demo</a>
+            </div>
+          </div>
+        </div></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ SKILLS ============ -->
+<section id="skills">
+  <div class="wrap">
+    <p class="section-label">05 — Skills</p>
+    <h2 class="section-title">Toolkit</h2>
+    <div class="skills-grid">
+      <div class="skill-row">
+        <div class="skill-cat">Programming</div>
+        <div class="chips"><span class="chip">SQL</span><span class="chip">Python</span><span class="chip">Pandas</span><span class="chip">NumPy</span><span class="chip">R</span></div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-cat">Databases</div>
+        <div class="chips"><span class="chip">Oracle</span><span class="chip">Microsoft SQL Server</span></div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-cat">Big Data</div>
+        <div class="chips"><span class="chip">Hadoop</span><span class="chip">Spark</span><span class="chip">MapReduce</span></div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-cat">Visualization</div>
+        <div class="chips"><span class="chip">Tableau</span><span class="chip">Power BI</span></div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-cat">Cloud</div>
+        <div class="chips"><span class="chip">Google Cloud Platform</span><span class="chip">Microsoft Azure</span></div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-cat">Other</div>
+        <div class="chips"><span class="chip">Excel</span><span class="chip">Oracle PeopleSoft</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact" class="contact">
+  <div class="wrap">
+    <p class="section-label">06 — Contact</p>
+    <h2>Let's talk.</h2>
+    <p>I'm building toward U.S. analyst roles and always happy to chat about a problem your team is working on.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="mailto:himanimistry0@gmail.com">himanimistry0@gmail.com</a>
+      <a class="btn" href="https://linkedin.com/in/himani-mistry/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="foot">
+    <span>© 2026 Himani Mistry</span>
+    <span>Built &amp; hosted on GitHub Pages</span>
+  </div>
+</div>
+
+<script>
+  // ----- expandable project cards -----
+  document.querySelectorAll('.proj-head').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var card = btn.closest('.proj');
+      var open = card.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  });
+
+  // ----- nav active state on scroll -----
+  var sections = document.querySelectorAll('section[id], header[id]');
+  var navlinks = document.querySelectorAll('.nav-links a');
+  if ('IntersectionObserver' in window) {
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) {
+          navlinks.forEach(function(l){
+            l.classList.toggle('active', l.getAttribute('href') === '#' + e.target.id);
+          });
+        }
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    sections.forEach(function(s){ obs.observe(s); });
+  }
+</script>
+</body>
+</html>
