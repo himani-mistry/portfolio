@@ -240,10 +240,10 @@
   }
   .hero-img svg{display:block;width:100%;height:auto;}
   .viz-wrap{
-    border:1px solid var(--line);border-radius:10px;overflow:auto;margin-bottom:22px;
-    background:#fff;-webkit-overflow-scrolling:touch;
+    border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-bottom:22px;
+    background:#fff;
   }
-  .viz-wrap .tableauPlaceholder{min-width:640px;}
+  .viz-scale{width:1200px;height:800px;transform-origin:top left;}
   .scaffold{display:grid;grid-template-columns:120px 1fr;gap:0;}
   .scaffold dt{
     font-family:var(--mono);font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;
@@ -446,10 +446,11 @@
         </button>
         <div class="proj-body"><div class="inner" id="p1">
           <div class="proj-detail">
-            <p class="proj-hook">Nine raw tables → a MySQL star schema → SQL views → an interactive Tableau story a sales manager can explore — surfacing that the top ~9% of customers drive ~38% of revenue.</p>
+            <p class="proj-hook">Nine raw tables → a MySQL star schema → SQL views → an interactive Tableau story a sales manager can explore — surfacing that the top 9.4% of customers drive 38.3% of revenue.</p>
 
             <!-- TABLEAU LIVE EMBED (AdventureWorks Internet Sales Story) -->
             <div class="viz-wrap">
+              <div class="viz-scale">
               <div class='tableauPlaceholder' id='vizInfra' style='position: relative'>
                 <object class='tableauViz' style='display:none;'>
                   <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
@@ -468,12 +469,13 @@
                   <param name='filter' value='publish=yes' />
                 </object>
               </div>
+              </div>
               <script type='text/javascript'>
                 (function(){
                   var divElement = document.getElementById('vizInfra');
                   var vizElement = divElement.getElementsByTagName('object')[0];
-                  vizElement.style.width = '100%';
-                  vizElement.style.height = '827px';
+                  vizElement.style.width = '1200px';
+                  vizElement.style.height = '800px';
                   var scriptElement = document.createElement('script');
                   scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
                   vizElement.parentNode.insertBefore(scriptElement, vizElement);
@@ -483,14 +485,14 @@
 
             <dl class="scaffold">
               <dt>Problem</dt><dd>A retailer's sales data sat spread across many raw operational tables — unusable for anyone trying to answer a business question. The goal: turn that raw data into a governed warehouse and a self-serve dashboard so a sales manager could explore revenue by product, region, customer, and promotion without writing a single query.</dd>
-              <dt>Data</dt><dd>Microsoft's AdventureWorks data warehouse sample — nine tables (internet sales facts plus customer, product, territory, date, and promotion dimensions), covering internet sales from 2010–2013.</dd>
+              <dt>Data</dt><dd>Microsoft's AdventureWorksDW2017 sample — nine tables: one Internet Sales fact of 60,398 order lines, plus eight dimensions (date, product, subcategory, category, customer, geography, territory, promotion). Covers online sales from 2010 through 2013.</dd>
               <dt>Approach</dt><dd>Loaded the nine tables into a MySQL database and modeled them into a star schema (a central sales fact surrounded by dimension tables). Wrote four SQL views to pre-shape the analytics layer — sales by category &amp; month, sales by territory, customer segments, and promotion effectiveness — so the reporting logic lives in the database, not the dashboard. Connected MySQL live to Tableau and built the views into an interactive Tableau story.</dd>
-              <dt>Result</dt><dd>Two findings the dashboard surfaces: revenue is highly concentrated — the top ~9% of customers (those spending $5K+) generate ~38% of total revenue, a textbook Pareto pattern with clear implications for retention focus. And promotions matter more than their count suggests — genuine promotions drove 2–5× higher average order value than the "No Discount" baseline (~$946–$2,384 vs. ~$469).</dd>
+              <dt>Result</dt><dd>Two findings the dashboard surfaces. Revenue is highly concentrated — the top 9.4% of customers (those spending $5K+) generate 38.3% of total revenue, a clear long-tail pattern with direct implications for where retention effort should go. And on promotions: the Volume Discount drove a genuine average-order-value lift (~$947 vs. ~$469 for no discount, across ~2,000 real orders), while several promotions that looked stronger on paper turned out to be fixed-price product bundles rather than a true promotional effect — a distinction worth catching before anyone acts on it.</dd>
               <dt>Next steps</dt><dd>The warehouse is read-only and batch-loaded. Next: automate the load as a scheduled pipeline, add incremental refresh so new sales flow in without a full reload, and layer row-level security so different regional managers see only their territory.</dd>
             </dl>
             <div class="proj-links">
               <a class="btn" href="https://public.tableau.com/views/adventureworks_dw/AdventureWorksStory" target="_blank" rel="noopener">Open full dashboard ↗</a>
-              <a class="btn" href="#" target="_blank" rel="noopener">GitHub repo</a>
+              <a class="btn" href="https://github.com/himani-mistry/mysql-tableau-pipeline" target="_blank" rel="noopener">GitHub repo</a>
             </div>
           </div>
         </div></div>
@@ -730,12 +732,28 @@
     });
   });
 
+  // ----- scale fixed-size Tableau vizzes to fit their container -----
+  function scaleVizzes(){
+    document.querySelectorAll('.viz-scale').forEach(function(el){
+      var wrap = el.parentNode;
+      var avail = wrap.clientWidth;
+      if (!avail) return;
+      var scale = Math.min(1, avail / 1200);
+      el.style.transform = 'scale(' + scale + ')';
+      wrap.style.height = (800 * scale) + 'px';
+    });
+  }
+  window.addEventListener('resize', scaleVizzes);
+  window.addEventListener('load', scaleVizzes);
+  scaleVizzes();
+
   // ----- expandable project cards -----
   document.querySelectorAll('.proj-head').forEach(function(btn){
     btn.addEventListener('click', function(){
       var card = btn.closest('.proj');
       var open = card.classList.toggle('open');
       btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      if (open) setTimeout(scaleVizzes, 50);
     });
   });
 
