@@ -239,6 +239,11 @@
     border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-bottom:22px;background:#fff;
   }
   .hero-img svg{display:block;width:100%;height:auto;}
+  .viz-wrap{
+    border:1px solid var(--line);border-radius:10px;overflow:auto;margin-bottom:22px;
+    background:#fff;-webkit-overflow-scrolling:touch;
+  }
+  .viz-wrap .tableauPlaceholder{min-width:640px;}
   .scaffold{display:grid;grid-template-columns:120px 1fr;gap:0;}
   .scaffold dt{
     font-family:var(--mono);font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;
@@ -436,27 +441,56 @@
             <span class="proj-tags">MySQL → SQL views → Tableau</span>
           </span>
           <span class="proj-right">
-            <span class="tag-status">In progress</span>
             <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
           </span>
         </button>
         <div class="proj-body"><div class="inner" id="p1">
           <div class="proj-detail">
-            <p class="proj-hook"><span class="fill">The hook: one line a skimmer reads in 5 seconds — e.g. "A manager can self-serve channel margin weekly."</span></p>
-            <!-- HERO VISUAL: swap this div for  <img src="img/p1.png" alt="..." style="width:100%;border-radius:10px;">  -->
-            <div class="hero-slot">hero visual — a screenshot of the dashboard or schema</div>
-            <!-- TABLEAU EMBED SLOT: paste your Tableau Public "Embed" code here when the dashboard is live. -->
+            <p class="proj-hook">Nine raw tables → a MySQL star schema → SQL views → an interactive Tableau story a sales manager can explore — surfacing that the top ~9% of customers drive ~38% of revenue.</p>
+
+            <!-- TABLEAU LIVE EMBED (AdventureWorks Internet Sales Story) -->
+            <div class="viz-wrap">
+              <div class='tableauPlaceholder' id='vizInfra' style='position: relative'>
+                <object class='tableauViz' style='display:none;'>
+                  <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                  <param name='embed_code_version' value='3' />
+                  <param name='site_root' value='' />
+                  <param name='name' value='adventureworks_dw/AdventureWorksStory' />
+                  <param name='tabs' value='no' />
+                  <param name='toolbar' value='yes' />
+                  <param name='static_image' value='https://public.tableau.com/static/images/ad/adventureworks_dw/AdventureWorksStory/1.png' />
+                  <param name='animate_transition' value='yes' />
+                  <param name='display_static_image' value='yes' />
+                  <param name='display_spinner' value='yes' />
+                  <param name='display_overlay' value='yes' />
+                  <param name='display_count' value='yes' />
+                  <param name='language' value='en-US' />
+                  <param name='filter' value='publish=yes' />
+                </object>
+              </div>
+              <script type='text/javascript'>
+                (function(){
+                  var divElement = document.getElementById('vizInfra');
+                  var vizElement = divElement.getElementsByTagName('object')[0];
+                  vizElement.style.width = '100%';
+                  vizElement.style.height = '827px';
+                  var scriptElement = document.createElement('script');
+                  scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                  vizElement.parentNode.insertBefore(scriptElement, vizElement);
+                })();
+              </script>
+            </div>
+
             <dl class="scaffold">
-              <dt>Problem</dt><dd class="fill">The business question, in plain language — what decision did this help someone make?</dd>
-              <dt>Data</dt><dd class="fill">Source, size, what it is, where it came from.</dd>
-              <dt>Approach</dt><dd class="fill">What you built — the schema, the SQL views, the dashboard. A key snippet or diagram.</dd>
-              <dt>Result</dt><dd class="fill">The quantified outcome or the insight it unlocked.</dd>
-              <dt>Next steps</dt><dd class="fill">Honest limitations + what you'd build next.</dd>
+              <dt>Problem</dt><dd>A retailer's sales data sat spread across many raw operational tables — unusable for anyone trying to answer a business question. The goal: turn that raw data into a governed warehouse and a self-serve dashboard so a sales manager could explore revenue by product, region, customer, and promotion without writing a single query.</dd>
+              <dt>Data</dt><dd>Microsoft's AdventureWorks data warehouse sample — nine tables (internet sales facts plus customer, product, territory, date, and promotion dimensions), covering internet sales from 2010–2013.</dd>
+              <dt>Approach</dt><dd>Loaded the nine tables into a MySQL database and modeled them into a star schema (a central sales fact surrounded by dimension tables). Wrote four SQL views to pre-shape the analytics layer — sales by category &amp; month, sales by territory, customer segments, and promotion effectiveness — so the reporting logic lives in the database, not the dashboard. Connected MySQL live to Tableau and built the views into an interactive Tableau story.</dd>
+              <dt>Result</dt><dd>Two findings the dashboard surfaces: revenue is highly concentrated — the top ~9% of customers (those spending $5K+) generate ~38% of total revenue, a textbook Pareto pattern with clear implications for retention focus. And promotions matter more than their count suggests — genuine promotions drove 2–5× higher average order value than the "No Discount" baseline (~$946–$2,384 vs. ~$469).</dd>
+              <dt>Next steps</dt><dd>The warehouse is read-only and batch-loaded. Next: automate the load as a scheduled pipeline, add incremental refresh so new sales flow in without a full reload, and layer row-level security so different regional managers see only their territory.</dd>
             </dl>
             <div class="proj-links">
+              <a class="btn" href="https://public.tableau.com/views/adventureworks_dw/AdventureWorksStory" target="_blank" rel="noopener">Open full dashboard ↗</a>
               <a class="btn" href="#" target="_blank" rel="noopener">GitHub repo</a>
-              <a class="btn" href="#" target="_blank" rel="noopener">.sql files</a>
-              <a class="btn" href="#" target="_blank" rel="noopener">Live dashboard</a>
             </div>
           </div>
         </div></div>
