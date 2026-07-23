@@ -19,12 +19,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Himani Mistry — Data Analyst</title>
-<meta name="description" content="Himani Mistry — data analyst turning systems and large-scale data into decisions. MS Business Analytics, CSU East Bay.">
+<title>Himani Mistry | Data Analyst</title>
+<meta name="description" content="Himani Mistry, data analyst turning systems and large-scale data into decisions. MS Business Analytics, CSU East Bay.">
 
 <!-- Link-preview tags: control what shows when the URL is texted or shared -->
 <meta property="og:title" content="Himani Mistry">
-<meta property="og:description" content="Data Analyst · San Francisco Bay Area — turning systems and large-scale data into decisions.">
+<meta property="og:description" content="Data Analyst · San Francisco Bay Area. Turning systems and large-scale data into decisions.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://himani-mistry.github.io/portfolio/">
 <meta name="twitter:card" content="summary">
@@ -140,8 +140,9 @@
   .btn:hover{text-decoration:none;border-color:var(--accent);transform:translateY(-1px);}
   .btn-primary{background:var(--accent);color:#fff;border-color:var(--accent);}
   .btn-primary:hover{background:var(--accent-soft);border-color:var(--accent-soft);}
-  .btn-copy{cursor:pointer;font-family:var(--mono);font-size:.85rem;}
-  .copy-icon{width:15px;height:15px;opacity:.85;}
+  .btn-copy{cursor:pointer;font-family:var(--mono);font-size:.85rem;}  .copy-icon{width:15px;height:15px;opacity:.85;}
+  .btn-inert{opacity:.4;cursor:default;user-select:none;}
+  .btn-inert:hover{border-color:var(--line);transform:none;}
   .btn-copy.copied{background:#3BA776;border-color:#3BA776;}
   .avail{
     font-family:var(--mono);font-size:.74rem;color:var(--ink-faint);
@@ -212,15 +213,16 @@
   .proj-tags{font-family:var(--mono);font-size:.78rem;color:var(--ink-soft);margin-top:4px;}
   .proj-right{display:flex;align-items:center;gap:12px;}
   .tag-status{
-    font-family:var(--mono);font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;
-    color:var(--ink-faint);border:1px solid var(--line);border-radius:999px;padding:3px 9px;white-space:nowrap;
+    font-family:var(--mono);font-size:.68rem;letter-spacing:.09em;text-transform:uppercase;
+    font-weight:600;color:#8A5A0B;background:#FCF3E2;border:1px solid #EBD7AE;
+    border-radius:999px;padding:4px 11px;white-space:nowrap;
   }
   .chev{width:18px;height:18px;color:var(--ink-faint);transition:transform .3s;flex-shrink:0;}
   .proj.open .chev{transform:rotate(180deg);color:var(--accent);}
   @media(max-width:680px){
     .proj-head{grid-template-columns:auto 1fr auto;gap:14px;padding:18px;}
     .proj-icon{display:none;}
-    .tag-status{display:none;}
+    .tag-status{font-size:.6rem;padding:3px 8px;letter-spacing:.05em;}
   }
 
   /* expandable body via grid-rows trick */
@@ -308,7 +310,7 @@
   <div class="wrap">
     <span class="eyebrow">Data Analyst · San Francisco Bay Area</span>
     <h1>Himani Mistry</h1>
-    <p class="thesis">I turn <strong>systems and large-scale data</strong> into decisions — building the pipelines that store data, the models that predict from it, and the tools that generate with it.</p>
+    <p class="thesis">I turn <strong>systems and large-scale data</strong> into decisions, building the pipelines that store data, the models that predict from it, and the tools that generate with it.</p>
     <div class="hero-actions">
       <button class="btn btn-primary btn-copy" data-copy="himanimistry0@gmail.com" aria-label="Copy email address">
         <span class="copy-text">himanimistry0@gmail.com</span>
@@ -326,12 +328,12 @@
 <!-- ============ ABOUT ============ -->
 <section id="about">
   <div class="wrap">
-    <p class="section-label">01 — About</p>
+    <p class="section-label">01 · About</p>
     <div class="about-grid">
-      <p class="about-lede">Data analyst proficient in modern tools to extract insights, build dashboards, and develop analytical models that support data-driven decisions. I've worked across large-scale historical datasets — from workforce and HR data to four decades of climate records — translating messy real-world questions into structured reporting and clear answers.</p>
+      <p class="about-lede">Data analyst proficient in modern tools to extract insights, build dashboards, and develop analytical models that support data-driven decisions. I've worked across large-scale historical datasets, from workforce and HR data to climate research data, translating messy real-world questions into structured reporting and clear answers.</p>
       <ul class="about-facts">
-        <li><b>Now</b> MS Business Analytics candidate, CSU East Bay — graduating Dec 2026</li>
-        <li><b>Foundation</b> BA, University of Toronto — Urban Planning &amp; Public Policy, GIS</li>
+        <li><b>Now</b> MS Business Analytics candidate at CSU East Bay, graduating Dec 2026</li>
+        <li><b>Foundation</b> BA in Urban Planning &amp; Public Policy (GIS), University of Toronto</li>
         <li><b>Domain depth</b> People Analytics &amp; HR, Canadian federal government</li>
         <li><b>Based in</b> San Francisco Bay Area, California</li>
       </ul>
@@ -342,16 +344,16 @@
 <!-- ============ EXPERIENCE ============ -->
 <section id="experience">
   <div class="wrap">
-    <p class="section-label">02 — Experience</p>
+    <p class="section-label">02 · Experience</p>
     <h2 class="section-title">Where I've done the work</h2>
 
     <div class="xp">
       <div class="xp-when">Jan 2024 – Aug 2025</div>
       <div>
         <h3 class="xp-role">HR Research Analyst</h3>
-        <p class="xp-org">Patrimoine Canadien — Canadian Heritage</p>
+        <p class="xp-org">Patrimoine Canadien / Canadian Heritage</p>
         <ul class="xp-points">
-          <li>Designed and deployed a Power BI dashboard tracking office attendance for 1,000+ employees across department sectors — surfacing a 20% gap in policy compliance and giving leadership the data to refine hybrid in-office strategy.</li>
+          <li>Designed and deployed a Power BI dashboard tracking office attendance for 1,000+ employees across department sectors, surfacing a 20% gap in policy compliance and giving leadership the data to refine hybrid in-office strategy.</li>
           <li>Built an employee training-compliance dashboard automating tracking for 20+ mandatory modules, lifting completion rates 10% in the first quarter by visualizing departmental bottlenecks for senior management.</li>
           <li>Analyzed 40 years of demographic and employment-equity data to pinpoint under-representation in key roles, directly informing the department's multi-decade diversity roadmap.</li>
           <li>Partnered with HR stakeholders across teams to translate business questions into structured reporting solutions and dashboards.</li>
@@ -389,7 +391,7 @@
 <!-- ============ EDUCATION ============ -->
 <section id="education">
   <div class="wrap">
-    <p class="section-label">03 — Education</p>
+    <p class="section-label">03 · Education</p>
     <h2 class="section-title">Training</h2>
 
     <div class="edu">
@@ -422,9 +424,9 @@
 -->
 <section id="projects">
   <div class="wrap">
-    <p class="section-label">04 — Projects</p>
+    <p class="section-label">04 · Projects</p>
     <h2 class="section-title">Four projects across the analytics spectrum</h2>
-    <p class="proj-intro">From the systems that store data to the models that generate from it — each stage of the analytics maturity ladder, one project deep. Click any card to open it.</p>
+    <p class="proj-intro">Each stage of the analytics maturity ladder, one project deep: from the systems that store data to the models that generate from it. Click any card to open it.</p>
 
     <div class="ladder">
 
@@ -436,9 +438,9 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg>
           </span>
           <span class="proj-meta">
-            <span class="proj-cat">Infrastructure</span>
+            <span class="proj-cat">Data infrastructure + descriptive analysis</span>
             <h3 class="proj-title">Sales warehouse + dashboard</h3>
-            <span class="proj-tags">MySQL → SQL views → Tableau</span>
+            <span class="proj-tags">MySQL database → SQL views → Tableau visuals</span>
           </span>
           <span class="proj-right">
             <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
@@ -446,7 +448,7 @@
         </button>
         <div class="proj-body"><div class="inner" id="p1">
           <div class="proj-detail">
-            <p class="proj-hook">Nine raw tables → a MySQL star schema → SQL views → an interactive Tableau story a sales manager can explore — surfacing that the top 9.4% of customers drive 38.3% of revenue.</p>
+            <p class="proj-hook">Nine raw tables → a MySQL star schema → SQL views → an interactive Tableau story a sales manager can explore, surfacing that the top 9.4% of customers drive 38.3% of revenue.</p>
 
             <!-- TABLEAU LIVE EMBED (AdventureWorks Internet Sales Story) -->
             <div class="viz-wrap">
@@ -484,10 +486,10 @@
             </div>
 
             <dl class="scaffold">
-              <dt>Problem</dt><dd>A retailer's sales data sat spread across many raw operational tables — unusable for anyone trying to answer a business question. The goal: turn that raw data into a governed warehouse and a self-serve dashboard so a sales manager could explore revenue by product, region, customer, and promotion without writing a single query.</dd>
-              <dt>Data</dt><dd>Microsoft's AdventureWorksDW2017 sample — nine tables: one Internet Sales fact of 60,398 order lines, plus eight dimensions (date, product, subcategory, category, customer, geography, territory, promotion). Covers online sales from 2010 through 2013.</dd>
-              <dt>Approach</dt><dd>Loaded the nine tables into a MySQL database and modeled them into a star schema (a central sales fact surrounded by dimension tables). Wrote four SQL views to pre-shape the analytics layer — sales by category &amp; month, sales by territory, customer segments, and promotion effectiveness — so the reporting logic lives in the database, not the dashboard. Connected MySQL live to Tableau and built the views into an interactive Tableau story.</dd>
-              <dt>Result</dt><dd>Two findings the dashboard surfaces. Revenue is highly concentrated — the top 9.4% of customers (those spending $5K+) generate 38.3% of total revenue, a clear long-tail pattern with direct implications for where retention effort should go. And on promotions: the Volume Discount drove a genuine average-order-value lift (~$947 vs. ~$469 for no discount, across ~2,000 real orders), while several promotions that looked stronger on paper turned out to be fixed-price product bundles rather than a true promotional effect — a distinction worth catching before anyone acts on it.</dd>
+              <dt>Problem</dt><dd>A retailer's sales data sat spread across many raw operational tables, unusable for anyone trying to answer a business question. The goal: turn that raw data into a governed warehouse and a self-serve dashboard so a sales manager could explore revenue by product, region, customer, and promotion without writing a single query.</dd>
+              <dt>Data</dt><dd>Microsoft's AdventureWorksDW2017 sample. Nine tables: one Internet Sales fact of 60,398 order lines, plus eight dimensions (date, product, subcategory, category, customer, geography, territory, promotion). Covers online sales from 2010 through 2013.</dd>
+              <dt>Approach</dt><dd>Loaded the nine tables into a MySQL database and modeled them into a star schema (a central sales fact surrounded by dimension tables). Wrote four SQL views to pre-shape the analytics layer (sales by category &amp; month, sales by territory, customer segments, and promotion effectiveness) so the reporting logic lives in the database, not the dashboard. Connected MySQL live to Tableau and built the views into an interactive Tableau story.</dd>
+              <dt>Result</dt><dd>Two findings the dashboard surfaces. Revenue is highly concentrated: the top 9.4% of customers (those spending $5K+) generate 38.3% of total revenue, a clear long-tail pattern with direct implications for where retention effort should go. And on promotions: the Volume Discount drove a genuine average-order-value lift (~$947 vs. ~$469 for no discount, across ~2,000 real orders), while several promotions that looked stronger on paper turned out to be fixed-price product bundles rather than a true promotional effect, a distinction worth catching before anyone acts on it.</dd>
               <dt>Next steps</dt><dd>The warehouse is read-only and batch-loaded. Next: automate the load as a scheduled pipeline, add incremental refresh so new sales flow in without a full reload, and layer row-level security so different regional managers see only their territory.</dd>
             </dl>
             <div class="proj-links">
@@ -506,7 +508,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17l5-5 4 4 7-8"/><path d="M16 8h4v4"/></svg>
           </span>
           <span class="proj-meta">
-            <span class="proj-cat">Predictive</span>
+            <span class="proj-cat">Predictive analysis</span>
             <h3 class="proj-title">Retail revenue forecast</h3>
             <span class="proj-tags">Time series · R · ARIMA</span>
           </span>
@@ -516,7 +518,7 @@
         </button>
         <div class="proj-body"><div class="inner" id="p2">
           <div class="proj-detail">
-            <p class="proj-hook">Six forecasting methods, scored on data they never saw — auto-ARIMA projected Walmart's revenue within ~4%, half the error of the best regression.</p>
+            <p class="proj-hook">Six forecasting methods, scored on data they never saw. Auto-ARIMA projected Walmart's revenue within ~4%, half the error of the best regression.</p>
             <div class="hero-img">
 <svg viewBox="0 0 720 520" xmlns="http://www.w3.org/2000/svg" font-family="'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">
   <rect width="720" height="520" fill="#ffffff"/>
@@ -558,11 +560,11 @@
 </svg>
             </div>
             <dl class="scaffold">
-              <dt>Problem</dt><dd>Quarterly revenue forecasts drive inventory, staffing, and budget decisions — so the method behind them matters. How accurately can we project a large retailer's revenue 1–2 years out, and which forecasting approach should a planning team actually trust?</dd>
-              <dt>Data</dt><dd>Walmart's public quarterly revenue, 2006 Q1 – 2025 Q3 (~79 quarters). A strong upward trend plus a hard Q4 holiday spike every year — the two patterns any model has to handle.</dd>
-              <dt>Approach</dt><dd>Built a ladder of six methods — regression with seasonality, linear, and quadratic trend; fixed and auto-selected ARIMA; and a two-level hybrid I engineered (a quadratic regression with an AR(1) model layered on its residuals, motivated by leftover autocorrelation in the residual ACF). Each was scored on a held-out 19-quarter window no model saw in training, so the comparison reflects real forecasting skill, not memorized history.</dd>
-              <dt>Result</dt><dd>Auto-ARIMA was the most accurate at ~4% MAPE — roughly half the error of the best regression (~8%). The detail I'd flag in an interview: my two-level hybrid had the tightest <em>in-sample</em> fit of any model but landed mid-pack out-of-sample — a clean illustration that fit and forecasting accuracy are different things, and that residual diagnostics reveal what a tidy-looking regression hides.</dd>
-              <dt>Next steps</dt><dd>The model is univariate by design — it learns only from revenue's own history. Next: fold in macro covariates (consumer spending, CPI), test prediction-interval coverage rather than point error alone, and extend the benchmark to other retailers.</dd>
+              <dt>Problem</dt><dd>Quarterly revenue forecasts drive inventory, staffing, and budget decisions, so the method behind them matters. How accurately can we project a large retailer's revenue 1–2 years out, and which forecasting approach should a planning team actually trust?</dd>
+              <dt>Data</dt><dd>Walmart's public quarterly revenue, 2006 Q1 – 2025 Q3 (~79 quarters). A strong upward trend plus a hard Q4 holiday spike every year: the two patterns any model has to handle.</dd>
+              <dt>Approach</dt><dd>Built a ladder of six methods: regression with seasonality, linear, and quadratic trend; fixed and auto-selected ARIMA; and a two-level hybrid I engineered (a quadratic regression with an AR(1) model layered on its residuals, motivated by leftover autocorrelation in the residual ACF). Each was scored on a held-out 19-quarter window no model saw in training, so the comparison reflects real forecasting skill, not memorized history.</dd>
+              <dt>Result</dt><dd>Auto-ARIMA was the most accurate at ~4% MAPE, roughly half the error of the best regression (~8%). The detail I'd flag in an interview: my two-level hybrid had the tightest <em>in-sample</em> fit of any model but landed mid-pack out-of-sample, a clean illustration that fit and forecasting accuracy are different things, and that residual diagnostics reveal what a tidy-looking regression hides.</dd>
+              <dt>Next steps</dt><dd>The model is univariate by design: it learns only from revenue's own history. Next: fold in macro covariates (consumer spending, CPI), test prediction-interval coverage rather than point error alone, and extend the benchmark to other retailers.</dd>
             </dl>
             <div class="proj-links">
               <a class="btn" href="https://github.com/himani-mistry/walmart-revenue-forecasting" target="_blank" rel="noopener">GitHub repo</a>
@@ -580,7 +582,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg>
           </span>
           <span class="proj-meta">
-            <span class="proj-cat">Prescriptive</span>
+            <span class="proj-cat">Prescriptive analysis</span>
             <h3 class="proj-title">Workforce optimization</h3>
             <span class="proj-tags">Gurobi · Python</span>
           </span>
@@ -591,18 +593,16 @@
         </button>
         <div class="proj-body"><div class="inner" id="p3">
           <div class="proj-detail">
-            <p class="proj-hook"><span class="fill">The hook: one line a skimmer reads in 5 seconds.</span></p>
-            <div class="hero-slot">hero visual — the optimized allocation / before-vs-after</div>
+            <div class="hero-slot" aria-hidden="true"></div>
             <dl class="scaffold">
-              <dt>Problem</dt><dd class="fill">The decision being optimized, in plain language.</dd>
-              <dt>Data</dt><dd class="fill">Source, size, what it is, where it came from.</dd>
-              <dt>Approach</dt><dd class="fill">Objective, constraints, solver — key snippet or diagram.</dd>
-              <dt>Result</dt><dd class="fill">The optimized outcome vs. the baseline.</dd>
-              <dt>Next steps</dt><dd class="fill">Honest limitations + what you'd do next.</dd>
+              <dt>Problem</dt><dd>&nbsp;</dd>
+              <dt>Data</dt><dd>&nbsp;</dd>
+              <dt>Approach</dt><dd>&nbsp;</dd>
+              <dt>Result</dt><dd>&nbsp;</dd>
             </dl>
             <div class="proj-links">
-              <a class="btn" href="#" target="_blank" rel="noopener">GitHub repo</a>
-              <a class="btn" href="#" target="_blank" rel="noopener">.py files</a>
+              <span class="btn btn-inert">GitHub repo</span>
+              <span class="btn btn-inert">.py files</span>
             </div>
           </div>
         </div></div>
@@ -616,32 +616,112 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
           </span>
           <span class="proj-meta">
-            <span class="proj-cat">Generative</span>
-            <h3 class="proj-title">Purchase-intent model</h3>
-            <span class="proj-tags">Text + GenAI · Python</span>
+            <span class="proj-cat">Diagnostic analysis + generative AI</span>
+            <h3 class="proj-title">Product quality monitor</h3>
+            <span class="proj-tags">Python · Fisher's exact · FDR · LLM API pipeline</span>
           </span>
           <span class="proj-right">
-            <span class="tag-status">In progress</span>
             <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
           </span>
         </button>
         <div class="proj-body"><div class="inner" id="p4">
           <div class="proj-detail">
-            <p class="proj-hook"><span class="fill">The hook: one line a skimmer reads in 5 seconds.</span></p>
-            <div class="hero-slot">hero visual — a sample of model input → output</div>
-            <!-- LIVE DEMO TIP: this is the one to deploy on Hugging Face Spaces or Streamlit
-                 so the "Live demo" button opens something a manager can actually try. -->
+            <p class="proj-hook">A product can run 93% negative this month while its lifetime average moves less than 3 points. This finds those products from review text alone.</p>
+            <div class="hero-img">
+<svg viewBox="0 0 720 420" xmlns="http://www.w3.org/2000/svg" font-family="'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <rect width="720" height="420" fill="#ffffff"/>
+  <text x="40" y="44" font-size="22" font-weight="700" fill="#0f172a">The watchlist: what a manager receives</text>
+  <text x="40" y="70" font-size="13" fill="#64748b">568,454 reviews &#8594; 1,150 products tested &#8594; 107 flagged &#8594; 5 survive FDR control at q &#8804; 0.05</text>
+
+  <g font-size="10" fill="#94a3b8" letter-spacing="0.8">
+    <text x="40" y="104">PRODUCT</text>
+    <text x="150" y="104">BASELINE &#8594; RECENT % NEGATIVE</text>
+    <text x="405" y="104">LIFT</text>
+    <text x="460" y="104">q</text>
+    <text x="525" y="104">WINDOW</text>
+    <text x="580" y="104">CATEGORY</text>
+  </g>
+  <line x1="40" y1="114" x2="680" y2="114" stroke="#cbd5e1" stroke-width="1"/>
+
+  <g stroke="#e2e8f0" stroke-width="1">
+    <line x1="40" y1="170" x2="680" y2="170"/>
+    <line x1="40" y1="216" x2="680" y2="216"/>
+    <line x1="40" y1="262" x2="680" y2="262"/>
+    <line x1="40" y1="308" x2="680" y2="308"/>
+    <line x1="40" y1="354" x2="680" y2="354"/>
+  </g>
+
+  <!-- row 1 : B000IBILV6 -->
+  <text x="40" y="151" font-size="11.5" font-family="ui-monospace,monospace" fill="#0f172a" font-weight="600">B000IBILV6</text>
+  <rect x="150" y="131" width="1.5" height="9" rx="1" fill="#c7cdd9"/>
+  <rect x="150" y="144" width="100.0" height="9" rx="1" fill="#4f46e5"/>
+  <text x="310" y="151" font-size="12" fill="#334155">0% &#8594; 67%</text>
+  <text x="405" y="151" font-size="12" font-weight="700" fill="#4f46e5">+67%</text>
+  <text x="460" y="151" font-size="12" fill="#475569">0.0018</text>
+  <text x="525" y="151" font-size="12" fill="#475569">312d</text>
+  <rect x="576" y="139" width="52" height="17" rx="8.5" fill="#fef2f2"/>
+  <text x="602" y="151" font-size="11" font-weight="600" text-anchor="middle" fill="#b91c1c">safety</text>
+
+  <!-- row 2 : B000FKIYEO -->
+  <text x="40" y="197" font-size="11.5" font-family="ui-monospace,monospace" fill="#0f172a" font-weight="600">B000FKIYEO</text>
+  <rect x="150" y="177" width="64.3" height="9" rx="1" fill="#c7cdd9"/>
+  <rect x="150" y="190" width="150.0" height="9" rx="1" fill="#4f46e5"/>
+  <text x="310" y="197" font-size="12" fill="#334155">43% &#8594; 100%</text>
+  <text x="405" y="197" font-size="12" font-weight="700" fill="#4f46e5">+57%</text>
+  <text x="460" y="197" font-size="12" fill="#475569">0.0330</text>
+  <text x="525" y="197" font-size="12" fill="#475569">213d</text>
+  <text x="580" y="197" font-size="11.5" fill="#475569">reformulation</text>
+
+  <!-- row 3 : B000BY50BY -->
+  <text x="40" y="243" font-size="11.5" font-family="ui-monospace,monospace" fill="#0f172a" font-weight="600">B000BY50BY</text>
+  <rect x="150" y="223" width="29.5" height="9" rx="1" fill="#c7cdd9"/>
+  <rect x="150" y="236" width="110.0" height="9" rx="1" fill="#4f46e5"/>
+  <text x="310" y="243" font-size="12" fill="#334155">20% &#8594; 73%</text>
+  <text x="405" y="243" font-size="12" font-weight="700" fill="#4f46e5">+54%</text>
+  <text x="460" y="243" font-size="12" fill="#475569">0.0407</text>
+  <text x="525" y="243" font-size="12" fill="#475569">184d</text>
+  <text x="580" y="243" font-size="11.5" fill="#475569">reformulation</text>
+
+  <!-- row 4 : B004OAZ36I -->
+  <text x="40" y="289" font-size="11.5" font-family="ui-monospace,monospace" fill="#0f172a" font-weight="600">B004OAZ36I</text>
+  <rect x="150" y="269" width="59.8" height="9" rx="1" fill="#c7cdd9"/>
+  <rect x="150" y="282" width="140.0" height="9" rx="1" fill="#4f46e5"/>
+  <text x="310" y="289" font-size="12" fill="#334155">40% &#8594; 93%</text>
+  <text x="405" y="289" font-size="12" font-weight="700" fill="#4f46e5">+53%</text>
+  <text x="460" y="289" font-size="12" fill="#475569">0.0228</text>
+  <text x="525" y="289" font-size="12" fill="#475569">26d</text>
+  <text x="580" y="289" font-size="11.5" fill="#475569">fulfillment</text>
+
+  <!-- row 5 : B003FDC2I2 -->
+  <text x="40" y="335" font-size="11.5" font-family="ui-monospace,monospace" fill="#0f172a" font-weight="600">B003FDC2I2</text>
+  <rect x="150" y="315" width="10.0" height="9" rx="1" fill="#c7cdd9"/>
+  <rect x="150" y="328" width="70.0" height="9" rx="1" fill="#4f46e5"/>
+  <text x="310" y="335" font-size="12" fill="#334155">7% &#8594; 47%</text>
+  <text x="405" y="335" font-size="12" font-weight="700" fill="#4f46e5">+40%</text>
+  <text x="460" y="335" font-size="12" fill="#475569">0.0288</text>
+  <text x="525" y="335" font-size="12" fill="#475569">13d</text>
+  <text x="580" y="335" font-size="11.5" fill="#475569">reformulation</text>
+
+  <g font-size="10" fill="#94a3b8">
+    <rect x="40" y="372" width="16" height="8" rx="1" fill="#c7cdd9"/>
+    <text x="63" y="380">baseline</text>
+    <rect x="115" y="372" width="16" height="8" rx="1" fill="#4f46e5"/>
+    <text x="138" y="380">recent 15 reviews</text>
+    <text x="245" y="380">&#183;  q = Benjamini&#8211;Hochberg adjusted p-value  &#183;  window = days spanned by those 15 reviews</text>
+  </g>
+</svg>
+            </div>
             <dl class="scaffold">
-              <dt>Problem</dt><dd class="fill">The text/GenAI problem, in plain language.</dd>
-              <dt>Data</dt><dd class="fill">Source, size, what it is, where it came from.</dd>
-              <dt>Approach</dt><dd class="fill">Pipeline, model, prompts/embeddings — key snippet.</dd>
-              <dt>Result</dt><dd class="fill">What it produces / how well it works.</dd>
-              <dt>Next steps</dt><dd class="fill">Honest limitations + what you'd do next.</dd>
+              <dt>Problem</dt><dd>The rating on a product page is a lifetime average, which makes it structurally blind to recent decline. By the time it moves, the damage is months old and already sitting in returns and refunds. And nobody can read 74,258 products' reviews to compensate.</dd>
+              <dt>Data</dt><dd>Amazon Fine Food Reviews: 568,454 reviews across 74,258 products, 1999–2012.</dd>
+              <dt>Approach</dt><dd>For each product with enough history (≥40 reviews over ≥12 months, 1,150 of them), Fisher's exact test compares the negative rate in its last 15 reviews against its own baseline. Benjamini–Hochberg correction across all 1,150 tests controls the false discovery rate. Survivors are passed to an LLM API (Gemini) that returns a fixed schema (what changed, since when, what to check, category) so the output is a structured action, not a paragraph. Sentiment labels come from a companion TF-IDF classifier, which is what lets the same logic run on support tickets and survey text where no star ratings exist.</dd>
+              <dt>Result</dt><dd>107 products flag at raw p &lt; 0.05, but with 1,150 tests, ~58 of those are expected from chance alone. After FDR control at q = 0.05, five survive, and each is externally verifiable: a pet-food safety episode (0% → 67% negative, q = 0.0018), three recipe or supplier changes, and one fulfillment failure where a coffee sampler shipped as loose pods in paper bags. Every row carries its q-value and window length, so the list can be audited rather than just trusted.</dd>
+              <dt>Next steps</dt><dd>The window is a fixed 15 reviews, so across the five alerts "recent" spans anywhere from 13 days to 312. Holding review count constant holds statistical power constant, but changepoint detection would replace the fixed window. The <em>since</em> field is model-inferred and can differ from the computed window start; both ship as separate columns. The corpus ends in 2012, so this is retrospective, though the detection logic is date-agnostic and runs unchanged on a live feed.</dd>
             </dl>
             <div class="proj-links">
-              <a class="btn" href="#" target="_blank" rel="noopener">GitHub repo</a>
-              <a class="btn" href="#" target="_blank" rel="noopener">.py files</a>
-              <a class="btn" href="#" target="_blank" rel="noopener">Live demo</a>
+              <a class="btn" href="https://github.com/himani-mistry/product-quality-monitor" target="_blank" rel="noopener">GitHub repo</a>
+              <a class="btn" href="https://github.com/himani-mistry/product-quality-monitor/blob/main/product_quality_monitor.ipynb" target="_blank" rel="noopener">Monitor notebook</a>
+              <a class="btn" href="https://github.com/himani-mistry/product-quality-monitor/blob/main/product_watchlist.csv" target="_blank" rel="noopener">Watchlist CSV</a>
             </div>
           </div>
         </div></div>
@@ -654,7 +734,7 @@
 <!-- ============ SKILLS ============ -->
 <section id="skills">
   <div class="wrap">
-    <p class="section-label">05 — Skills</p>
+    <p class="section-label">05 · Skills</p>
     <h2 class="section-title">Toolkit</h2>
     <div class="skills-grid">
       <div class="skill-row">
@@ -663,19 +743,23 @@
       </div>
       <div class="skill-row">
         <div class="skill-cat">Databases</div>
-        <div class="chips"><span class="chip">Oracle</span><span class="chip">Microsoft SQL Server</span></div>
+        <div class="chips"><span class="chip">MySQL</span><span class="chip">Oracle</span><span class="chip">Microsoft SQL Server</span></div>
       </div>
       <div class="skill-row">
-        <div class="skill-cat">Big Data</div>
-        <div class="chips"><span class="chip">Hadoop</span><span class="chip">Spark</span><span class="chip">MapReduce</span></div>
+        <div class="skill-cat">Statistics</div>
+        <div class="chips"><span class="chip">Hypothesis testing</span><span class="chip">Distribution analysis</span><span class="chip">Significance testing</span></div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-cat">Cloud &amp; warehousing</div>
+        <div class="chips"><span class="chip">Google BigQuery</span><span class="chip">Amazon Redshift</span><span class="chip">Google Cloud Platform</span><span class="chip">Microsoft Azure</span></div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-cat">Big Data &amp; ETL</div>
+        <div class="chips"><span class="chip">Hadoop</span><span class="chip">Spark</span><span class="chip">MapReduce</span><span class="chip">Talend Studio</span></div>
       </div>
       <div class="skill-row">
         <div class="skill-cat">Visualization</div>
-        <div class="chips"><span class="chip">Tableau</span><span class="chip">Power BI</span></div>
-      </div>
-      <div class="skill-row">
-        <div class="skill-cat">Cloud</div>
-        <div class="chips"><span class="chip">Google Cloud Platform</span><span class="chip">Microsoft Azure</span></div>
+        <div class="chips"><span class="chip">Tableau</span><span class="chip">Power BI</span><span class="chip">Matplotlib</span></div>
       </div>
       <div class="skill-row">
         <div class="skill-cat">Other</div>
@@ -688,7 +772,7 @@
 <!-- ============ CONTACT ============ -->
 <section id="contact" class="contact">
   <div class="wrap">
-    <p class="section-label">06 — Contact</p>
+    <p class="section-label">06 · Contact</p>
     <h2>Let's talk.</h2>
     <p>I'm building toward U.S. analyst roles and always happy to chat about a problem your team is working on.</p>
     <div class="hero-actions">
