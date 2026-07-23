@@ -114,6 +114,15 @@
 
   /* ---------- HERO ---------- */
   .hero{padding:84px 0 64px;border-bottom:1px solid var(--line-soft);}
+  .hero-grid{display:grid;grid-template-columns:1fr auto;gap:56px;align-items:center;}
+  .headshot{
+    width:220px;height:220px;border-radius:50%;object-fit:cover;display:block;
+    border:1px solid var(--line);box-shadow:0 10px 30px -18px rgba(27,27,30,.45);
+  }
+  @media(max-width:760px){
+    .hero-grid{grid-template-columns:1fr;gap:28px;justify-items:start;}
+    .headshot{width:120px;height:120px;order:-1;}
+  }
   .hero .eyebrow{display:block;margin-bottom:18px;}
   .hero h1{
     font-family:var(--display);
@@ -275,7 +284,17 @@
   @media(max-width:680px){ .skills-grid{grid-template-columns:1fr;} }
 
   /* ---------- CONTACT / FOOTER ---------- */
-  .contact{border-bottom:none;text-align:left;}
+  .contact{border-bottom:none;text-align:left;position:relative;overflow:hidden;padding:88px 0 96px;}
+  .contact::before{
+    content:'';position:absolute;inset:0;
+    background:url('bay-bg.jpg') center 62% / cover no-repeat;
+    opacity:.16;
+  }
+  .contact::after{
+    content:'';position:absolute;inset:0;
+    background:linear-gradient(100deg, var(--paper) 8%, rgba(250,249,246,.72) 48%, rgba(250,249,246,.35) 100%);
+  }
+  .contact > .wrap{position:relative;z-index:1;}
   .contact h2{font-family:var(--display);font-weight:600;font-size:clamp(1.8rem,5vw,2.6rem);letter-spacing:-.02em;margin:0 0 10px;}
   .contact p{color:var(--ink-soft);max-width:480px;margin:0 0 26px;}
   .foot{padding:30px 0;color:var(--ink-faint);font-family:var(--mono);font-size:.74rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
@@ -307,21 +326,21 @@
 
 <!-- ============ HERO ============ -->
 <header class="hero" id="top">
-  <div class="wrap">
-    <span class="eyebrow">Data Analyst · San Francisco Bay Area</span>
-    <h1>Himani Mistry</h1>
-    <p class="thesis">I turn <strong>systems and large-scale data</strong> into decisions, building the pipelines that store data, the models that predict from it, and the tools that generate with it.</p>
-    <div class="hero-actions">
-      <button class="btn btn-primary btn-copy" data-copy="himanimistry0@gmail.com" aria-label="Copy email address">
-        <span class="copy-text">himanimistry0@gmail.com</span>
-        <svg class="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-      </button>
-      <a class="btn" href="https://linkedin.com/in/himani-mistry/" target="_blank" rel="noopener">LinkedIn</a>
-      <a class="btn" href="#projects">View projects</a>
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <span class="eyebrow">Data Analyst · San Francisco Bay Area</span>
+      <h1>Himani Mistry</h1>
+      <p class="thesis">I turn <strong>systems and large-scale data</strong> into decisions, building the pipelines that store data, the models that predict from it, and the tools that generate with it.</p>
+      <div class="hero-actions">
+        <button class="btn btn-primary btn-copy" data-copy="himanimistry0@gmail.com" aria-label="Copy email address">
+          <span class="copy-text">himanimistry0@gmail.com</span>
+          <svg class="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+        </button>
+        <a class="btn" href="https://linkedin.com/in/himani-mistry/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="#projects">View projects</a>
+      </div>
     </div>
-    <!-- OPTIONAL availability line — surfaces your Canadian / TN-eligible angle.
-         Delete this block if you'd rather keep it for conversations only. -->
-    <div class="avail"><span class="dot"></span> Open to U.S. analyst roles · Canadian citizen, TN-eligible</div>
+    <img class="headshot" src="headshot.jpg" alt="Himani Mistry" width="470" height="470">
   </div>
 </header>
 
@@ -333,7 +352,7 @@
       <p class="about-lede">Data analyst proficient in modern tools to extract insights, build dashboards, and develop analytical models that support data-driven decisions. I've worked across large-scale historical datasets, from workforce and HR data to climate research data, translating messy real-world questions into structured reporting and clear answers.</p>
       <ul class="about-facts">
         <li><b>Now</b> MS Business Analytics candidate at CSU East Bay, graduating Dec 2026</li>
-        <li><b>Foundation</b> BA in Urban Planning &amp; Public Policy (GIS), University of Toronto</li>
+        <li><b>Foundation</b> BA, University of Toronto. Urban Planning and Public Policy Major, Minoring in GIS Tech</li>
         <li><b>Domain depth</b> People Analytics &amp; HR, Canadian federal government</li>
         <li><b>Based in</b> San Francisco Bay Area, California</li>
       </ul>
@@ -405,7 +424,7 @@
     <div class="edu">
       <div>
         <div class="edu-school">University of Toronto</div>
-        <div class="edu-degree">BA Co-op, Urban Planning &amp; Public Policy · GIS Technology</div>
+        <div class="edu-degree">BA Co-op, Urban Planning and Public Policy Major · Minoring in GIS Tech</div>
       </div>
       <div class="edu-meta">Sep 2016 – Jun 2021</div>
     </div>
@@ -774,7 +793,7 @@
   <div class="wrap">
     <p class="section-label">06 · Contact</p>
     <h2>Let's talk.</h2>
-    <p>I'm building toward U.S. analyst roles and always happy to chat about a problem your team is working on.</p>
+    <p>I'm building toward new, challenging roles to take on, and always happy to chat about a problem your team is working on.</p>
     <div class="hero-actions">
       <button class="btn btn-primary btn-copy" data-copy="himanimistry0@gmail.com" aria-label="Copy email address">
         <span class="copy-text">himanimistry0@gmail.com</span>
